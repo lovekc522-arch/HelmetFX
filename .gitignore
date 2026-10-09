@@ -11,6 +11,7 @@
 .vscode/
 *.log
 *.zip
+/build/
 # TeamSpeak SDK is TeamSpeak's copyrighted material, do not PR with it
 ts3_plugin/sdk/*
 !ts3_plugin/sdk/PUT_SDK_HERE.txt
