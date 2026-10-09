@@ -1,0 +1,4 @@
+Extract TS3 sdk 26 so that these files exists:
+    1_teamspeak_plugin\sdk\include\ts3_functions.h
+    1_teamspeak_plugin\sdk\src\plugin.h
+The SDK is not bundled here, find it at https://github.com/teamspeak/ts3client-pluginsdk

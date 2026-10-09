@@ -1,0 +1,16 @@
+*.dll
+*.lib
+*.pdb
+*.exp
+*.obj
+*.ilk
+*.ts3_plugin
+*.pbo
+*.pyc
+.vs/
+.vscode/
+*.log
+*.zip
+# TeamSpeak SDK is TeamSpeak's copyrighted material, do not PR with it
+ts3_plugin/sdk/*
+!ts3_plugin/sdk/PUT_SDK_HERE.txt
