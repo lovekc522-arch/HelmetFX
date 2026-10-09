@@ -3,7 +3,7 @@
 class CfgPatches {
     class helmetfx_main {
         name = "HelmetFX";
-        author = "you";
+        author = "kes";
         units[] = {};
         weapons[] = {};
         requiredVersion = 2.0;
