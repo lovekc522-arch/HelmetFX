@@ -86,6 +86,17 @@ helmetfx_fnc_sync = {
     };
 };
 
+helmetfx_fnc_autoInstall = {
+    if !(missionNamespace getVariable ["helmetfx_autoInstall", false]) exitWith {};
+    private _r = "helmetfx" callExtension "install";
+    diag_log format ["[HelmetFX] plugin install: %1", _r];
+    if ((_r find "installed") == 0 || {(_r find "updated") == 0}) then {
+        systemChat "HelmetFX: TeamSpeak plugin installed or updated. Restart TS3.";
+    };
+};
+
+[{ [] call helmetfx_fnc_autoInstall }, [], 3] call CBA_fnc_waitAndExecute;
+
 [{ [] call helmetfx_fnc_sync }, 0.5] call CBA_fnc_addPerFrameHandler;       // catches death, settings changes, etc.
 ["loadout", { [] call helmetfx_fnc_sync }] call CBA_fnc_addPlayerEventHandler;  // instant on helmet swap
 ["unit",    { [] call helmetfx_fnc_sync }] call CBA_fnc_addPlayerEventHandler;  // respawn / Zeus remote control

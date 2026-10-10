@@ -69,12 +69,16 @@ if exist helmetfx_x64.dll del helmetfx_x64.dll
 if errorlevel 1 ( popd & echo. & echo EXTENSION BUILD FAILED & goto :end )
 if not exist helmetfx_x64.dll ( popd & echo EXTENSION DLL NOT PRODUCED & goto :end )
 popd
+if not exist "%ROOT%build\HelmetFX" mkdir "%ROOT%build\HelmetFX"
+copy /y "%ROOT%ts3_plugin\helmetfx_win64.dll" "%ROOT%build\HelmetFX\" >nul
+copy /y "%ROOT%arma_dll\helmetfx_x64.dll" "%ROOT%build\HelmetFX\" >nul
 
 echo.
 echo DONE.
 echo   TS plugin DLL       : ts3_plugin\helmetfx_win64.dll
 echo   TS plugin installer : ts3_plugin\helmetfx.ts3_plugin
 echo   Arma extension DLL  : arma_dll\helmetfx_x64.dll
+echo   Mod folder (DLLs)   : build\HelmetFX  (run tools\pack_pbo.py to add the PBO)
 
 :end
 if not defined CI pause

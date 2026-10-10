@@ -1,4 +1,3 @@
-
 // XEH_preInit.sqf
 helmetfx_slots = [
     ["facewear", {goggles player},  "CfgGlasses",  "Facewear"],
@@ -11,6 +10,11 @@ helmetfx_slots = [
 
 ["helmetfx_enabled", "CHECKBOX",
     ["Enable Helmet FX", "Master switch. Off = No Processing."],
+    ["HelmetFX", "General"], true, 0
+] call CBA_fnc_addSetting;
+
+["helmetfx_autoInstall", "CHECKBOX",
+    ["Auto-install TeamSpeak plugin", "Checks for and installs TS3 plugin update on game join."],
     ["HelmetFX", "General"], true, 0
 ] call CBA_fnc_addSetting;
 
